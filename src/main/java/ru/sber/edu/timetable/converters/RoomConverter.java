@@ -12,6 +12,9 @@ import java.time.LocalTime;
 public class RoomConverter {
 
     public static Room fromModelToEntity(RoomModel roomModel){
+        if (roomModel == null){
+            return new Room();
+        }
         return new Room(
                 roomModel.getRoomId(),
                 roomModel.getName()

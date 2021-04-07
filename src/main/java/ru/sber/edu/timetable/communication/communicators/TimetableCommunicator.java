@@ -14,7 +14,9 @@ import ru.sber.edu.timetable.converters.LessonsConverter;
 import ru.sber.edu.timetable.converters.RoomConverter;
 import ru.sber.edu.timetable.converters.TimeslotConverter;
 
+import java.time.LocalTime;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 @Service
@@ -52,9 +54,14 @@ public class TimetableCommunicator {
     }
 
     public void save(Object timeTable) {
-        for (Lesson lesson : ((TimeTable) timeTable).getLessonList()) {
-            // TODO this is awfully naive: optimistic locking causes issues if called by the SolverManager
-            lessonsCommunicator.createLesson(LessonsConverter.fromEntityToModel(lesson));
+        try {
+            for (Lesson lesson : ((TimeTable) timeTable).getLessonList()) {
+                Thread.sleep(1000);
+                // TODO this is awfully naive: optimistic locking causes issues if called by the SolverManager
+                lessonsCommunicator.updateLesson(LessonsConverter.fromEntityToUpdateModel(lesson));
+            }
+        } catch (Exception e){
+            e.printStackTrace();
         }
     }
 

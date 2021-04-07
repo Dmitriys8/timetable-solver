@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import ru.sber.edu.timetable.Constants;
+import ru.sber.edu.timetable.communication.models.input.LessonUpdateModel;
 import ru.sber.edu.timetable.communication.models.input.LessonInputModel;
 import ru.sber.edu.timetable.communication.models.output.LessonModelsList;
 
@@ -62,6 +63,28 @@ public class LessonsCommunicator {
         String response = restTemplate.exchange(
                 REQUEST_URI,
                 HttpMethod.PUT,
+                entity,
+                String.class
+        ).getBody();
+        return response;
+    }
+
+    public String updateLesson(LessonUpdateModel lessonUpdateModel){
+        HttpEntity entity;
+        try {
+            entity = new HttpEntity(
+                    lessonUpdateModel,
+                    getCurrentHeaders()
+            );
+        } catch (Exception e){
+            entity = new HttpEntity(
+                    lessonUpdateModel,
+                    configureHeaders()
+            );
+        }
+        String response = restTemplate.exchange(
+                REQUEST_URI + "/" + lessonUpdateModel.getLessonId(),
+                HttpMethod.POST,
                 entity,
                 String.class
         ).getBody();

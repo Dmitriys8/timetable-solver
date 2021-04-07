@@ -10,6 +10,9 @@ import java.time.LocalTime;
 public class TimeslotConverter {
 
     public static Timeslot fromModelToEntity(TimeslotModel timeslotModel){
+        if (timeslotModel == null){
+            return new Timeslot();
+        }
         return new Timeslot(
                 timeslotModel.timeslotId,
                 Days.getByName(timeslotModel.dayOfWeek),
