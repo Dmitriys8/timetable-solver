@@ -35,6 +35,9 @@ public class LessonsCommunicator {
         HttpEntity entity;
         try {
             entity = new HttpEntity(getCurrentHeaders());
+            if (entity.getHeaders().getFirst("H-Hasura-admin-secret") == null){
+                throw new Exception();
+            }
         } catch (Exception e) {
             entity = new HttpEntity(configureHeaders());
         }

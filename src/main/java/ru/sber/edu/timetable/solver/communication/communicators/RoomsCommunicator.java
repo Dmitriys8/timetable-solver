@@ -34,6 +34,9 @@ public class RoomsCommunicator {
         HttpEntity entity;
         try {
             entity = new HttpEntity(getCurrentHeaders());
+            if (entity.getHeaders().getFirst("X-Hasura-admin-secret") == null){
+                throw new Exception();
+            }
         } catch (Exception e) {
             System.out.println("Current request is undefined. Using headers by hardcode");
             entity = new HttpEntity(configureHeaders());

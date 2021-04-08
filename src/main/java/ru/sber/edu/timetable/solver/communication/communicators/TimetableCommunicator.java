@@ -49,10 +49,9 @@ public class TimetableCommunicator {
         );
     }
 
-    public void save(Object timeTable) {
+    public void save(TimeTable timeTable) {
         try {
-            for (Lesson lesson : ((TimeTable) timeTable).getLessonList()) {
-                Thread.sleep(1000);
+            for (Lesson lesson : timeTable.getLessonList()) {
                 // TODO this is awfully naive: optimistic locking causes issues if called by the SolverManager
                 lessonsCommunicator.updateLesson(LessonsConverter.fromEntityToUpdateModel(lesson));
             }

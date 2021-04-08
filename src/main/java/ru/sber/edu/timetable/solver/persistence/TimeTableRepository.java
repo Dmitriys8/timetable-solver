@@ -38,11 +38,6 @@ public class TimeTableRepository {
     private LessonRepository lessonRepository;
 
     public TimeTable findById(Long id) {
-        if (!SINGLETON_TIME_TABLE_ID.equals(id)) {
-            throw new IllegalStateException("There is no timeTable with id (" + id + ").");
-        }
-        // Occurs in a single transaction, so each initialized lesson references the same timeslot/room instance
-        // that is contained by the timeTable's timeslotList/roomList.
         return new TimeTable(
                 timeslotRepository.findAll(),
                 roomRepository.findAll(),

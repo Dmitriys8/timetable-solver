@@ -31,9 +31,9 @@ public class LessonsConverter {
 
     public static LessonUpdateModel fromEntityToUpdateModel(Lesson lesson){
         return new LessonUpdateModel(
-                lesson.getId(),
-                lesson.getRoom().getId(),
-                lesson.getTimeslot().getId()
+                lesson.getForeignId(),
+                lesson.getRoom().getForeignId(),
+                lesson.getTimeslot().getForeignId()
         );
     }
 
