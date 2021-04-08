@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import ru.sber.edu.timetable.solver.models.Room;
+import ru.sber.edu.timetable.solver.entities.Room;
 
 public interface RoomRepository extends PagingAndSortingRepository<Room, Long> {
 

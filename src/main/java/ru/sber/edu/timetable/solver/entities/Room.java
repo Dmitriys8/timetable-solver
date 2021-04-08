@@ -1,4 +1,4 @@
-package ru.sber.edu.timetable.solver.models;
+package ru.sber.edu.timetable.solver.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

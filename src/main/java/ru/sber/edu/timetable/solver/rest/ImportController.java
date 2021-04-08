@@ -6,9 +6,9 @@ import ru.sber.edu.timetable.solver.communication.communicators.TimeslotsCommuni
 import ru.sber.edu.timetable.solver.converters.LessonsConverter;
 import ru.sber.edu.timetable.solver.converters.RoomConverter;
 import ru.sber.edu.timetable.solver.converters.TimeslotConverter;
-import ru.sber.edu.timetable.solver.models.Lesson;
-import ru.sber.edu.timetable.solver.models.Room;
-import ru.sber.edu.timetable.solver.models.Timeslot;
+import ru.sber.edu.timetable.solver.entities.Lesson;
+import ru.sber.edu.timetable.solver.entities.Room;
+import ru.sber.edu.timetable.solver.entities.Timeslot;
 import ru.sber.edu.timetable.solver.persistence.LessonRepository;
 import ru.sber.edu.timetable.solver.persistence.RoomRepository;
 import ru.sber.edu.timetable.solver.persistence.TimeslotRepository;

@@ -24,7 +24,7 @@ import org.optaplanner.core.api.score.stream.ConstraintFactory;
 import org.optaplanner.core.api.score.stream.ConstraintProvider;
 import org.optaplanner.core.api.score.stream.Joiners;
 
-import ru.sber.edu.timetable.solver.models.Lesson;
+import ru.sber.edu.timetable.solver.entities.Lesson;
 
 public class TimeTableConstraintProvider implements ConstraintProvider {
 

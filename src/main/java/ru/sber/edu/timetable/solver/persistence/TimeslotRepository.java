@@ -20,7 +20,7 @@ import java.util.List;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import ru.sber.edu.timetable.solver.models.Timeslot;
+import ru.sber.edu.timetable.solver.entities.Timeslot;
 
 public interface TimeslotRepository extends PagingAndSortingRepository<Timeslot, Long> {
 

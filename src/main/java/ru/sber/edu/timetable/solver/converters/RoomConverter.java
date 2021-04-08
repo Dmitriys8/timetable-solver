@@ -2,7 +2,7 @@ package ru.sber.edu.timetable.solver.converters;
 
 import ru.sber.edu.timetable.solver.communication.models.input.RoomInputModel;
 import ru.sber.edu.timetable.solver.communication.models.output.RoomModel;
-import ru.sber.edu.timetable.solver.models.Room;
+import ru.sber.edu.timetable.solver.entities.Room;
 
 public class RoomConverter {
 

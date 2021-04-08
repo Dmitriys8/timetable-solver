@@ -2,7 +2,7 @@ package ru.sber.edu.timetable.solver.converters;
 
 import ru.sber.edu.timetable.solver.communication.models.input.TimeslotInputModel;
 import ru.sber.edu.timetable.solver.communication.models.output.TimeslotModel;
-import ru.sber.edu.timetable.solver.models.Timeslot;
+import ru.sber.edu.timetable.solver.entities.Timeslot;
 import ru.sber.edu.timetable.solver.enums.Days;
 
 import java.time.LocalTime;

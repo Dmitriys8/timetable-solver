@@ -4,7 +4,7 @@ package ru.sber.edu.timetable.solver.converters;
 import ru.sber.edu.timetable.solver.communication.models.input.LessonInputModel;
 import ru.sber.edu.timetable.solver.communication.models.input.LessonUpdateModel;
 import ru.sber.edu.timetable.solver.communication.models.output.LessonModel;
-import ru.sber.edu.timetable.solver.models.Lesson;
+import ru.sber.edu.timetable.solver.entities.Lesson;
 
 public class LessonsConverter {
 

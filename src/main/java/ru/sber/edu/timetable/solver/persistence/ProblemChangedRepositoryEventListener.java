@@ -24,9 +24,9 @@ import org.springframework.data.rest.core.annotation.HandleBeforeSave;
 import org.springframework.data.rest.core.annotation.RepositoryEventHandler;
 import org.springframework.stereotype.Component;
 
-import ru.sber.edu.timetable.solver.models.Lesson;
-import ru.sber.edu.timetable.solver.models.Room;
-import ru.sber.edu.timetable.solver.models.Timeslot;
+import ru.sber.edu.timetable.solver.entities.Lesson;
+import ru.sber.edu.timetable.solver.entities.Room;
+import ru.sber.edu.timetable.solver.entities.Timeslot;
 import ru.sber.edu.timetable.solver.rest.TimeTableController;
 
 /**

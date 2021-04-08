@@ -1,4 +1,4 @@
-package ru.sber.edu.timetable.solver.models;
+package ru.sber.edu.timetable.solver.entities;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;

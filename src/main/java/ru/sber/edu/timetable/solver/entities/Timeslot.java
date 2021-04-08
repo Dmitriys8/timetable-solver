@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package ru.sber.edu.timetable.solver.models;
+package ru.sber.edu.timetable.solver.entities;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;

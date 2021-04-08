@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import ru.sber.edu.timetable.solver.models.Lesson;
+import ru.sber.edu.timetable.solver.entities.Lesson;
 
 public interface LessonRepository extends PagingAndSortingRepository<Lesson, Long> {
 
