@@ -117,6 +117,12 @@
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>${version.compiler.plugin}</version>
+        <configuration>
+          <source>11</source>
+          <target>11</target>
+          <release>11</release>
+          <verbose>true</verbose>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.springframework.boot</groupId>
