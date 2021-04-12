@@ -1,8 +1,5 @@
 package ru.sber.edu.timetable.solver.communication.communicators;
 
-import ru.sber.edu.timetable.solver.Constants;
-import ru.sber.edu.timetable.solver.communication.models.input.TimeslotInputModel;
-import ru.sber.edu.timetable.solver.communication.models.output.TimeslotModelsList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpEntity;
@@ -12,9 +9,16 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+import ru.sber.edu.timetable.solver.Constants;
+import ru.sber.edu.timetable.solver.communication.models.input.TimeslotInputModel;
+import ru.sber.edu.timetable.solver.communication.models.output.TimeslotModel;
+import ru.sber.edu.timetable.solver.communication.models.output.TimeslotModelsList;
+import ru.sber.edu.timetable.solver.enums.Days;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Comparator;
 import java.util.Enumeration;
+import java.util.stream.Collectors;
 
 @Component
 public class TimeslotsCommunicator {
@@ -47,6 +51,16 @@ public class TimeslotsCommunicator {
                 entity,
                 TimeslotModelsList.class
         ).getBody();
+        Comparator<TimeslotModel> comparator = Comparator.comparing(
+                timeslotModel -> Days.getDayNumber(timeslotModel.getDayOfWeek())
+        );
+        comparator.thenComparing(TimeslotModel::getStartTime);
+        response.setTimeslots(
+                response.getTimeslots()
+                        .stream()
+                        .sorted(comparator)
+                        .collect(Collectors.toList())
+        );
         return response;
     }
 

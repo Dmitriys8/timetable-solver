@@ -16,7 +16,6 @@
 
 package ru.sber.edu.timetable.solver.rest;
 
-import org.aspectj.apache.bcel.classfile.Module;
 import org.optaplanner.core.api.score.ScoreManager;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
 import org.optaplanner.core.api.solver.SolverManager;
@@ -26,7 +25,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import ru.sber.edu.timetable.solver.Exporter;
 import ru.sber.edu.timetable.solver.entities.TimeTable;
 import ru.sber.edu.timetable.solver.persistence.TimeTableRepository;
@@ -70,6 +68,7 @@ public class TimeTableController {
         thread.start();
     }
 
+    @GetMapping("/solverStatus")
     public SolverStatus getSolverStatus() {
         return solverManager.getSolverStatus(TimeTableRepository.SINGLETON_TIME_TABLE_ID);
     }

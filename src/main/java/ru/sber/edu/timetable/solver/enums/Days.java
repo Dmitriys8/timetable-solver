@@ -56,4 +56,23 @@ public enum Days {
                 return MONDAY.name;
         }
     }
+
+    public static long getDayNumber(String dayName) {
+        switch (dayName){
+            case "tuesday":
+                return TUESDAY.dayOfWeekNumber;
+            case "wednesday":
+                return WEDNESDAY.dayOfWeekNumber;
+            case "thursday":
+                return THURSDAY.dayOfWeekNumber;
+            case "friday":
+                return FRIDAY.dayOfWeekNumber;
+            case "sunday":
+                return SUNDAY.dayOfWeekNumber;
+            case "saturday":
+                return SATURDAY.dayOfWeekNumber;
+            default:
+                return MONDAY.dayOfWeekNumber;
+        }
+    }
 }
